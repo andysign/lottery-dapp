@@ -1,5 +1,8 @@
 # compiled output
-/dist
+
+# dist should be added to git as this is used by docker
+# /dist
+
 /node_modules
 
 # Logs
