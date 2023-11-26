@@ -14,8 +14,6 @@ RUN mkdir ./dist/
 
 COPY ./.env ./.env
 
-COPY ./.env.deployed ./.env.deployed
-
 COPY ./.env.deployed-lottery ./.env.deployed-lottery
 
 COPY ./dist/ ./dist/
