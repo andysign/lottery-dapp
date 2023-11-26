@@ -9,4 +9,9 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/block-number')
+  async getBlockNumber(): Promise<number> {
+    return await this.appService.getBlockNumber();
+  }
 }
