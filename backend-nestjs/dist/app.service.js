@@ -16,6 +16,7 @@ const config_1 = require("@nestjs/config");
 let AppService = class AppService {
     constructor(configService) {
         this.configService = configService;
+        this.ctAddr = this.configService.get('TOKEN_ADDRESS', '0x0000000000000000000000000000000000000000');
         this.provider = new ethers_1.ethers.JsonRpcProvider(this.configService.get('RPC_ENDPOINT_URL', process.env.RPC_ENDPOINT_URL));
     }
     getHello() {
@@ -26,6 +27,10 @@ let AppService = class AppService {
         const blkNum = await provider.getBlockNumber();
         const lastBlkNum = blkNum | 0;
         return lastBlkNum;
+    }
+    getContractAddress() {
+        const { ctAddr } = this;
+        return ctAddr;
     }
 };
 exports.AppService = AppService;

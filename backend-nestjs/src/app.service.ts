@@ -7,8 +7,13 @@ import { ConfigService } from '@nestjs/config';
 @Injectable()
 export class AppService {
   private provider: ethers.Provider;
+  private ctAddr: any;
 
   constructor(private configService: ConfigService) {
+    this.ctAddr = this.configService.get<string>(
+      'TOKEN_ADDRESS',
+      '0x0000000000000000000000000000000000000000',
+    );
     this.provider = new ethers.JsonRpcProvider(
       this.configService.get<string>(
         'RPC_ENDPOINT_URL',
@@ -26,5 +31,10 @@ export class AppService {
     const blkNum = await provider.getBlockNumber();
     const lastBlkNum = blkNum | 0;
     return lastBlkNum;
+  }
+
+  getContractAddress() {
+    const { ctAddr } = this;
+    return ctAddr;
   }
 }

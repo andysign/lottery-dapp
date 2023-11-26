@@ -22,6 +22,9 @@ let AppController = class AppController {
     async getBlockNumber() {
         return await this.appService.getBlockNumber();
     }
+    getContractAddress() {
+        return { result: this.appService.getContractAddress() };
+    }
 };
 exports.AppController = AppController;
 __decorate([
@@ -36,6 +39,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getBlockNumber", null);
+__decorate([
+    (0, common_1.Get)('/contract-lottery-address'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "getContractAddress", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

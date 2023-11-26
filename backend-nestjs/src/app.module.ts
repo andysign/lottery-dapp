@@ -6,7 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['./.env', './.env.development'],
+      envFilePath: ['./.env', './.env.development', '.env.deployed-lottery'],
       isGlobal: true,
     }),
   ],

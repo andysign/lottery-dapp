@@ -4,4 +4,7 @@ export declare class AppController {
     constructor(appService: AppService);
     getHello(): string;
     getBlockNumber(): Promise<number>;
+    getContractAddress(): {
+        result: any;
+    };
 }

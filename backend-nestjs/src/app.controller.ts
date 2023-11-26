@@ -14,4 +14,9 @@ export class AppController {
   async getBlockNumber(): Promise<number> {
     return await this.appService.getBlockNumber();
   }
+
+  @Get('/contract-lottery-address')
+  getContractAddress() {
+    return { result: this.appService.getContractAddress() };
+  }
 }
