@@ -7,4 +7,11 @@ export declare class AppController {
     getContractAddress(): {
         result: any;
     };
+    deleteContractAddress(): () => number;
+    getContractAbi(): {
+        result: any;
+    };
+    mintTokens(body?: {}): Promise<{
+        result: string;
+    }>;
 }
