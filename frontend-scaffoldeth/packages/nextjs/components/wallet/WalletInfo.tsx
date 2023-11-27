@@ -1,6 +1,7 @@
 import { useAccount, useNetwork } from "wagmi";
 import { WalletBalance } from "./WalletBalance";
 import { WalletTransactionForm } from "./WalletTransactionForm";
+import { LotteryDeployerCheck } from "../lottery/LotteryDeployerCheck";
 
 export const WalletInfo = () => {
   const { address, isConnecting, isDisconnected } = useAccount();
@@ -19,6 +20,7 @@ export const WalletInfo = () => {
         <p>Connected to the network {chain?.name}</p>
 		{address && <WalletBalance address={address as `0x${string}`}></WalletBalance>}
 		{address && <WalletTransactionForm />}
+		{address && <LotteryDeployerCheck />}
       </div>
     );
   if (isConnecting)
