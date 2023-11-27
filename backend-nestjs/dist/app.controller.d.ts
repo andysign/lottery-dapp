@@ -7,7 +7,7 @@ export declare class AppController {
     getContractAddress(): {
         result: any;
     };
-    deleteContractAddress(): () => number;
+    deleteContractAddress(): number;
     getContractAbi(): {
         result: any;
     };

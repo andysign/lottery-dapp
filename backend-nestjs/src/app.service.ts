@@ -65,6 +65,7 @@ export class AppService {
     const addrZero = '0x0000000000000000000000000000000000000000';
     const strToSave = 'CT_ADDRESS="' + addrZero + '"';
     fs.writeFileSync('./.env.deployed-lottery', strToSave);
+    this.ctAddr = addrZero;
     return 0;
   }
 
