@@ -23,7 +23,7 @@ export class AppController {
   @Delete('/reset-saved-lottery-address')
   @HttpCode(204)
   deleteContractAddress() {
-    return this.appService.deleteContractAddress;
+    return this.appService.deleteContractAddress();
   }
 
   @Get('/contract-lottery-abi')

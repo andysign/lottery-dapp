@@ -29,7 +29,7 @@ let AppController = class AppController {
         return { result: this.appService.getContractAddress() };
     }
     deleteContractAddress() {
-        return this.appService.deleteContractAddress;
+        return this.appService.deleteContractAddress();
     }
     getContractAbi() {
         return { result: this.appService.getContractAbi() };
