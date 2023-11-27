@@ -4,4 +4,14 @@ export declare class AppController {
     constructor(appService: AppService);
     getHello(): string;
     getBlockNumber(): Promise<number>;
+    getContractAddress(): {
+        result: any;
+    };
+    deleteContractAddress(): number;
+    getContractAbi(): {
+        result: any;
+    };
+    mintTokens(body?: {}): Promise<{
+        result: string;
+    }>;
 }
