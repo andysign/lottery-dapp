@@ -27,9 +27,9 @@ async function initContracts() {
   contract = await contractFactory.deploy(
     "LotteryToken",
     "LT0",
-    TOKEN_RATIO,
-    ethers.parseUnits(BET_PRICE.toFixed(18)),
-    ethers.parseUnits(BET_FEE.toFixed(18))
+    TOKEN_RATIO.toString(),
+    ethers.parseUnits(BET_PRICE.toString(), 18),
+    ethers.parseUnits(BET_FEE.toString(), 18)
   );
   await contract.waitForDeployment();
   console.log(`CtAddr: ${await contract.getAddress()}`);
