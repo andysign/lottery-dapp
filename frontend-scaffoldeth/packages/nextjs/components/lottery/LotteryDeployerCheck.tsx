@@ -2,11 +2,34 @@ import { useEffect, useState } from "react";
 import { LotteryDeployer } from "./LotteryDeployer";
 import { LotteryReset } from "./LotteryReset";
 
+import { LotteryOptOneCheckState } from "./lottery-options/LotteryOptOneCheckState";
+import { LotteryOptTwoOpenBets } from "./lottery-options/LotteryOptTwoOpenBets";
+import { LotteryOptThreeTopUp } from "./lottery-options/LotteryOptThreeTopUp";
+import { LotteryOptFourBet } from "./lottery-options/LotteryOptFourBet";
+import { LotteryOptFiveCloseBets } from "./lottery-options/LotteryOptFiveCloseBets";
+import { LotteryOptSixCheckPrize } from "./lottery-options/LotteryOptSixCheckPrize";
+
 const addrZero = '0x0000000000000000000000000000000000000000';
 
-const LotteryManager = () => {
-  return( <>LotteryManagerTBD</> )
-}
+// const LotteryManager = () => {
+//   return(
+//     <>
+//       <h2><b>LotteryManager</b>:</h2>
+//       <br />
+//       <hr />
+//       <LotteryOptOneCheckState />
+//       <hr />
+//       <LotteryOptTwoOpenBets />
+//       <hr />
+//       <LotteryOptThreeTopUp />
+//       <hr />
+//       <LotteryOptFourBet />
+//       <hr />
+//       <LotteryOptFiveCloseBets />
+//       <hr />
+//       <LotteryOptSixCheckPrize />
+//     </> )
+// }
 
 export const LotteryDeployerCheck = () => {
   const [data, setData] = useState<{ result: string }>();
@@ -49,7 +72,24 @@ export const LotteryDeployerCheck = () => {
             <b className="py-2">Lottery deployed. You can start playing.</b>
           </div>
           <LotteryReset disabled={false} />
-          <LotteryManager />
+          <br />
+          {/* <LotteryManager /> */}
+          <>
+            <h2><b>LotteryManager</b>:</h2>
+            <br />
+            <hr />
+            <LotteryOptOneCheckState address={data?.result} />
+            <hr />
+            <LotteryOptTwoOpenBets />
+            <hr />
+            <LotteryOptThreeTopUp />
+            <hr />
+            <LotteryOptFourBet />
+            <hr />
+            <LotteryOptFiveCloseBets />
+            <hr />
+            <LotteryOptSixCheckPrize />
+          </>
         </>
       )}
     </div>
