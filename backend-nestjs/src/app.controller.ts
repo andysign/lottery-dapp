@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -18,5 +18,21 @@ export class AppController {
   @Get('/contract-lottery-address')
   getContractAddress() {
     return { result: this.appService.getContractAddress() };
+  }
+
+  @Delete('/reset-saved-lottery-address')
+  @HttpCode(204)
+  deleteContractAddress() {
+    return this.appService.deleteContractAddress;
+  }
+
+  @Get('/contract-lottery-abi')
+  getContractAbi() {
+    return { result: this.appService.getContractAbi() };
+  }
+
+  @Post('/deploy-lottery')
+  async mintTokens(@Body() body = {}) {
+    return { result: await this.appService.deployContract(body) };
   }
 }
