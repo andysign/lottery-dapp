@@ -58,7 +58,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "getContractAddress", null);
 __decorate([
-    (0, common_1.Delete)('/delete-lottery-address'),
+    (0, common_1.Delete)('/reset-saved-lottery-address'),
     (0, common_1.HttpCode)(204),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
